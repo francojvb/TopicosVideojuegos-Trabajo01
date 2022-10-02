@@ -7,15 +7,19 @@ import com.mygdx.game.GameObjects.Brick;
 import com.mygdx.game.Interface.IFactory;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class BrickFactory implements IFactory {
+    Random r = new Random();
     ArrayList<Brick> bricks;
     public BrickFactory() {
         bricks = new ArrayList<>();
     }
 
     public void build(int index,int y){
-        Brick brick = new Brick(0, 0,40,10);
+        int xSpeed= r.nextInt(15);
+        int ySpeed= r.nextInt(15);
+        Brick brick = new Brick(0, 0,40,10,xSpeed,ySpeed);
         int x = index * (brick.getWidth() + 20);
         brick.setY(Gdx.graphics.getHeight() - brick.getHeight() - y);
         brick.setX(x);

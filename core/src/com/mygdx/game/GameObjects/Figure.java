@@ -23,6 +23,16 @@ public class Figure {
         rectangle = new Rectangle(x,y,width,height);
     }
 
+    public Figure(int x, int y, int width, int height, int xSpeed, int ySpeed) {
+        this.x = x;
+        this.y = y;
+        this.width = width;
+        this.height = height;
+        this.xSpeed = xSpeed;
+        this.ySpeed = ySpeed;
+        rectangle = new Rectangle(x,y,width,height);
+    }
+
     public Figure(int x, int y) {
         this.x = x;
         this.y = y;

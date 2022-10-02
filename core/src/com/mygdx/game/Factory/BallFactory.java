@@ -13,14 +13,15 @@ import java.util.Random;
 
 public class BallFactory implements IFactory {
     ArrayList<Ball> balls;
-    Brick brick;
-    //Random r = new Random();
+    Random r = new Random();
     public BallFactory() {
         balls = new ArrayList<>();
     }
 
     public void build(int index,int y){
-        Ball ball = new Ball(0, 0,10,10,10);
+        int xSpeed= r.nextInt(15);
+        int ySpeed= r.nextInt(15);
+        Ball ball = new Ball(0, 0,10,xSpeed,ySpeed);
         int x = index + 20 ;
         ball.setY(Gdx.graphics.getHeight() - ball.getHeight() - y);
         ball.setX(x);
